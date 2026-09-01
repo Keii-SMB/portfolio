@@ -1,0 +1,338 @@
+/* -------------------------------------------------------------
+   MUHAMMAD FAQIH ARKAN // DKV PORTFOLIO
+   Minimalist Dark Mode
+-------------------------------------------------------------- */
+
+:root {
+  --bg: #09090b;
+  --bg-card: #121215;
+  --bg-subtle: #18181c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.25);
+
+  --text-pure: #fafafa;
+  --text-dim: #a1a1aa;
+  --text-muted: #52525b;
+
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --max-w: 1160px;
+  --radius: 10px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text-pure);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-pure);
+  line-height: 1.5;
+  padding: 3.5rem 1.5rem 6rem;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+
+.portfolio-shell {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* --- PROFILE HEADER --- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.profile-avatar-wrap {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-hover);
+  flex-shrink: 0;
+  background: var(--bg-card);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-pure);
+}
+
+.profile-role {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+.profile-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-pure);
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.95rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.profile-email-link:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-subtle);
+}
+
+/* --- PROJECTS FLOW --- */
+.projects-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-heading {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-pure);
+}
+
+.project-scope-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* --- POSTER & LOGO GRID (3:4) --- */
+.pair-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.asset-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s;
+  height: 100%;
+}
+
+.asset-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.asset-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asset-preview.logo-stage {
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+}
+
+.asset-preview.logo-stage img {
+  max-width: 88%;
+  max-height: 88%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.asset-preview.poster-stage {
+  background: #0d0d10;
+  padding: 0;
+}
+
+.asset-preview.poster-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.asset-label-bar {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  margin-top: auto;
+}
+
+.asset-type {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-pure);
+  letter-spacing: 0.06em;
+}
+
+.asset-meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* --- BMKG MOCKUP IMAGE CARD (Same style as others) --- */
+.bmkg-image-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.bmkg-image-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.bmkg-image-preview {
+  width: 100%;
+  overflow: hidden;
+}
+
+.bmkg-image-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bmkg-label-bar {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+}
+
+/* --- FOOTER --- */
+.minimal-foot {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.lightbox-inner {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-inner img {
+  max-width: 100%;
+  max-height: 82vh;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-tag {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-pure);
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .pair-grid {
+    grid-template-columns: 1fr;
+  }
+}

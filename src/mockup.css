@@ -1,0 +1,84 @@
+/* -------------------------------------------------------------
+   3D FLOATING ISOMETRIC PHONE MOCKUP SHOWCASE (BMKG)
+   Real Rock Pedestal & Depth-of-field Shadow Scene
+-------------------------------------------------------------- */
+
+.bmkg-mockup-stage-3d {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 480px;
+  background: #090a0d; /* Pure dark studio environment */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* Authentic Dark Slate Rock Plinth / Pedestal */
+.rock-plinth-surface {
+  position: absolute;
+  bottom: -40px;
+  left: 5%;
+  width: 580px;
+  height: 180px;
+  background: radial-gradient(ellipse at 50% 40%, #171922 0%, #0e1017 60%, #060709 95%);
+  border-radius: 50% / 35%;
+  transform: rotateX(68deg) translateZ(-40px);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.95), inset 0 2px 8px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+/* 3D Scene Wrapper */
+.phone-stage-scene {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* Floating Left Phone (Exact Isometric Angle from Reference) */
+.phone-3d-left {
+  position: absolute;
+  width: 255px;
+  left: 16%;
+  top: 5%;
+  transform: rotateX(20deg) rotateY(28deg) rotateZ(-15deg) translateZ(45px);
+  filter: drop-shadow(-35px 55px 35px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.1));
+  transition: transform 0.4s var(--ease-snappy);
+}
+
+.bmkg-mockup-stage-3d:hover .phone-3d-left {
+  transform: rotateX(16deg) rotateY(24deg) rotateZ(-13deg) translateZ(65px) translateY(-10px);
+}
+
+/* Floating Right Phone (Secondary Angled Pair from Reference) */
+.phone-3d-right {
+  position: absolute;
+  width: 235px;
+  right: 18%;
+  top: 14%;
+  transform: rotateX(22deg) rotateY(18deg) rotateZ(-8deg);
+  filter: drop-shadow(-25px 45px 30px rgba(0, 0, 0, 0.9));
+  transition: transform 0.4s var(--ease-snappy);
+}
+
+.bmkg-mockup-stage-3d:hover .phone-3d-right {
+  transform: rotateX(18deg) rotateY(14deg) rotateZ(-6deg) translateZ(20px) translateY(-6px);
+}
+
+.phone-3d-left img,
+.phone-3d-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
