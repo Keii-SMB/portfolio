@@ -29,7 +29,7 @@ export default function App() {
       {/* Profile Header */}
       <header className="profile-header">
         <div className="profile-avatar-wrap">
-
+          <img src="/assets/user_icon.jpg" alt="User Icon" className="profile-avatar" />
         </div>
         <div className="profile-info">
           <h1 className="profile-name">Muhammad Faqih Arkan</h1>
