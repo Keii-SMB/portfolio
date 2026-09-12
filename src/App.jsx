@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { UserRound } from 'lucide-react';
 import './App.css';
 
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
       {/* Profile Header */}
       <header className="profile-header">
         <div className="profile-avatar-wrap">
-          <img src="/assets/user_icon.jpg" alt="User Icon" className="profile-avatar" />
+          <UserRound className="profile-avatar-icon" />
         </div>
         <div className="profile-info">
           <h1 className="profile-name">Muhammad Faqih Arkan</h1>
