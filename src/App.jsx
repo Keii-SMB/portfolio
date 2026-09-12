@@ -29,11 +29,11 @@ export default function App() {
       {/* Profile Header */}
       <header className="profile-header">
         <div className="profile-avatar-wrap">
-          <img src="/assets/profile.jpg" alt="Muhammad Faqih Arkan" className="profile-avatar" />
+
         </div>
         <div className="profile-info">
           <h1 className="profile-name">Muhammad Faqih Arkan</h1>
-          <p className="profile-role">Visual Communication Design (DKV) Student // Brand Identity & UI/UX Design</p>
+
           <a href="mailto:faqiharkan123@gmail.com" className="profile-email-link">
             <span>faqiharkan123@gmail.com ↗</span>
           </a>
